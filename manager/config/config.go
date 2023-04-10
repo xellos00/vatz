@@ -33,16 +33,17 @@ var (
 
 // Config is Vatz config structure.
 type Config struct {
-	Vatz struct {
-		ProtocolIdentifier    string           `yaml:"protocol_identifier"`
-		Port                  int              `yaml:"port"`
-		NotificationInfo      NotificationInfo `yaml:"notification_info"`
-		HealthCheckerSchedule []string         `yaml:"health_checker_schedule"`
-		RPCInfo               RPCInfo          `yaml:"rpc_info"`
-		MonitoringInfo        MonitoringInfo   `yaml:"monitoring_info"`
-	} `yaml:"vatz_protocol_info"`
-
+	Vatz        VATZ       `yaml:"vatz_protocol_info"`
 	PluginInfos PluginInfo `yaml:"plugins_infos"`
+}
+
+type VATZ struct {
+	ProtocolIdentifier    string           `yaml:"protocol_identifier"`
+	Port                  int              `yaml:"port"`
+	NotificationInfo      NotificationInfo `yaml:"notification_info"`
+	HealthCheckerSchedule []string         `yaml:"health_checker_schedule"`
+	RPCInfo               RPCInfo          `yaml:"rpc_info"`
+	MonitoringInfo        MonitoringInfo   `yaml:"monitoring_info"`
 }
 
 // NotificationInfo is notification structure.
