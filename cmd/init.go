@@ -18,7 +18,6 @@ func createInitCommand(initializer tp.Initializer) *cobra.Command {
 		Short: "Init",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			log.Info().Str("module", "main").Msg("init")
-
 			template := `vatz_protocol_info:
   home_path: "%s"
   protocol_identifier: "Put Your Protocol here"
@@ -28,7 +27,7 @@ func createInitCommand(initializer tp.Initializer) *cobra.Command {
   notification_info:
     host_name: "Put your machine's host name"
     default_reminder_schedule:
-      - "*/15 * * * *"
+      - "*/30 * * * *"
     dispatch_channels:
       - channel: "discord"
         secret: "Put your Discord Webhook"
